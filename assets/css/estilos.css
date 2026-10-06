@@ -439,6 +439,23 @@ button {
   font-family: var(--serif);
   font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
   line-height: 1.05;
+  /* Entrada serena al cargar: sube suavemente y aparece (una sola vez) */
+  animation: hero-titulo-entrada 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes hero-titulo-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 {
+    animation: none;
+  }
 }
 .hero__subtitulo {
   margin-top: 1.25rem;
